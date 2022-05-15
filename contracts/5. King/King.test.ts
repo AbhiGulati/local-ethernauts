@@ -18,8 +18,6 @@ describe('Attacking King', function () {
         attacker = await Attacker.connect(hacker).deploy(victim.address, {
             value: ethers.utils.parseEther('5')
         });
-
-        console.log(await victim._prize());
     });
 
     // Get this to pass!
