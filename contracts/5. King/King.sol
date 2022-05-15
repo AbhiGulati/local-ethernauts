@@ -14,8 +14,17 @@ contract King {
     }
 
     receive() external payable {
-        require(msg.value >= prize || msg.sender == owner);
-        king.transfer(msg.value);
+        // console.log("prize", 1);
+        // console.log("prize", 1);
+        // console.log("prize", 1);
+        // console.log("prize", 1);
+        // console.log("Received payment", msg.value);
+        // require(msg.value >= prize || msg.sender == owner, "Insufficient");
+        console.log(king);
+        console.log("Sending payment to old king");
+        
+        king.transfer(1 wei);
+        console.log("Sent payment to old king");
         king = payable(msg.sender);
         prize = msg.value;
     }
