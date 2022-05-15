@@ -3,13 +3,12 @@ import { ethers } from 'hardhat';
 
 let victim: any;
 let attacker: any;
-let hacker: any;
 let delegateContract: any;
 let deployer: any;
 
 describe('Attacking Delegation', function () {
     beforeEach(async () => {
-        [hacker, deployer] = await ethers.getSigners();
+        [, deployer] = await ethers.getSigners();
         const DelegateContract = await ethers.getContractFactory('Delegate');
         delegateContract = await DelegateContract.connect(deployer).deploy(
             deployer.address
